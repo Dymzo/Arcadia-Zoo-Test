@@ -1,5 +1,10 @@
 {
-    "require": {
-      "php": "^7.4"
-    }
-  }
+    "name": "thedy/arcadia-zoo-test",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Thedy\\ArcadiaZooTest\\": "src/"
+        }
+    },
+    "require": {}
+}
