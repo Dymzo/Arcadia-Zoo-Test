@@ -1,0 +1,271 @@
+/* Style général pour le corps de la page */
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f4; /* Couleur de fond douce et naturelle */
+}
+
+/* Styles pour l'en-tête */
+header {
+    background-image: url('Image ECF/Feuilles fougère.jpg'); /* Chemin absolu */
+    background-size: cover; /* Pour que l'image couvre tout l'en-tête */
+    background-position: center; /* Centre l'image */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    height: 80px; /* Définir une hauteur fixe pour l'en-tête */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header img {
+    height: 130px;
+}
+
+nav {
+    display: flex;
+    flex: 1; /* Occupe l'espace restant entre le logo et les bords */
+    justify-content: center; /* Centre les éléments de navigation horizontalement */
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 18px; /* Ajuster la taille de la police ici */
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block; /* Affiche les liens normalement */
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style pour le logo de connexion */
+.login {
+    margin-left: auto; /* Aligne à droite dans le flex container */
+    display: flex;
+    align-items: center; /* Centre l'élément verticalement */
+    position: absolute; /* Positionne l'élément par rapport à son parent le plus proche en position relative */
+    right: 40px; /* Définit la distance par rapport au bord droit */
+    top: 20px; /* Définit la distance par rapport au haut */
+}
+
+.login a {
+    display: block; /* Assure que l'image est un bloc cliquable */
+}
+
+.login-icon {
+    width: 40px; /* Taille de l'icône de connexion */
+    height: 40px; /* Assure que la hauteur est égale à la largeur pour garder la forme ronde */
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Assure que l'image couvre le conteneur sans se déformer */
+    cursor: pointer; /* Change le curseur en pointeur au survol */
+}
+
+/* Icône du menu burger */
+.menu-burger {
+    display: none; /* Masqué par défaut, affiché sur les petits écrans */
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: absolute; /* Positionnement absolu pour le centrer */
+    left: 50%; /* Centrage horizontal */
+    transform: translateX(-50%); /* Ajuste le centrage */
+    z-index: 10; /* Assurez-vous qu'il est au-dessus des autres éléments */
+}
+
+/* Style de base pour le menu de navigation */
+#menu {
+    display: flex; /* Affichage horizontal pour les grands écrans */
+    justify-content: center; /* Centre les éléments horizontalement */
+    margin: 0;
+    padding: 0;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+/* Changer le fond des liens actifs */
+#menu a.active {
+    color: yellow; /* Couleur du lien actif */
+    background-color: rgba(0, 0, 0, 0.3); /* Optionnel : ajoute un fond léger pour mettre en évidence le lien actif */
+}
+
+/* Afficher le menu burger et masquer le menu lors de petits écrans */
+@media (max-width: 768px) {
+    .menu-burger {
+        display: block; /* Afficher le menu burger */
+    }
+
+    #menu {
+        display: none; /* Masquer le menu de navigation par défaut */
+        position: absolute;
+        top: 60px; /* Ajustez selon la hauteur de l'en-tête */
+        left: 0;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        z-index: 9; /* Assurez-vous qu'il est au-dessus du contenu */
+    }
+
+    #menu.active {
+        display: flex; /* Afficher le menu lorsque l'icône est cliquée */
+    }
+
+    #menu a {
+        padding: 15px; /* Ajuster le padding pour une meilleure visibilité */
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Style pour le contenu principal */
+main {
+    padding: 20px; /* Espacement autour du contenu principal */
+    margin-top: 100px; /* Espacement pour éviter que le contenu ne se cache sous l'en-tête fixe */
+    background-color: white; /* Fond blanc pour le contenu principal */
+    border-radius: 8px; /* Bords arrondis pour les sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+}
+
+/* Styles pour les sections */
+section {
+    margin-bottom: 40px; /* Espacement entre les sections */
+    padding: 20px; /* Espacement interne des sections */
+    background-color: #ffffff; /* Fond blanc pour les sections */
+    border-radius: 8px; /* Bords arrondis pour les sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour les sections */
+}
+
+/* Styles pour les titres des sections */
+section h3 {
+    margin-top: 0; /* Enlever l'espacement au-dessus des titres */
+    margin-bottom: 20px; /* Espacement sous les titres */
+    font-size: 24px; /* Taille de la police pour les titres des sections */
+    color: #333; /* Couleur du texte */
+    border-bottom: 2px solid #28a745; /* Ligne de séparation sous les titres */
+    padding-bottom: 10px; /* Espacement sous le titre */
+}
+
+/* Styles pour les formulaires */
+form {
+    margin-bottom: 20px;
+    padding: 20px; /* Ajoute de l'espace interne aux formulaires */
+    border-radius: 8px; /* Bords arrondis pour les formulaires */
+}
+
+form label {
+    display: block; /* Chaque étiquette sur une nouvelle ligne */
+    margin: 8px 0 4px; /* Espacement entre les étiquettes et les champs */
+    font-weight: bold; /* Texte en gras pour les étiquettes */
+}
+
+form input[type="text"], 
+form input[type="number"], 
+form input[type="password"], 
+form input[type="time"], 
+form textarea, 
+form select {
+    width: 100%; /* Champs de formulaire prennent toute la largeur */
+    padding: 8px;
+    margin-bottom: 10px; /* Espacement sous les champs */
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 4px; /* Bords légèrement arrondis */
+}
+
+form input[type="submit"] {
+    background-color: #28a745; /* Couleur verte pour le bouton */
+    color: white; /* Texte en blanc */
+    border: none; /* Supprime la bordure */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border-radius: 4px; /* Bords légèrement arrondis */
+    cursor: pointer; /* Change le curseur en pointeur */
+    font-size: 16px; /* Taille de la police */
+    display: block; /* Assure que le bouton prend toute la largeur disponible */
+    margin-top: 10px; /* Espacement au-dessus du bouton */
+}
+
+form input[type="submit"]:hover {
+    background-color: #218838; /* Couleur plus foncée au survol */
+}
+
+/* Styles pour les messages de notification */
+p {
+    margin: 0 0 20px; /* Espacement sous les paragraphes */
+}
+
+p.success {
+    color: green; /* Couleur verte pour les messages de succès */
+}
+
+p.error {
+    color: red; /* Couleur rouge pour les messages d'erreur */
+}
+
+/* Styles pour les tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0; /* Espacement vertical autour des tableaux */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px; /* Espacement interne des cellules */
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold; /* Gras pour les en-têtes de colonnes */
+}
+
+/* Styles pour les boutons d'action dans les tableaux */
+button {
+    background-color: #007bff; /* Couleur bleue pour les boutons */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px; /* Taille de la police */
+    margin-right: 5px; /* Espacement entre les boutons */
+}
+
+button:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Styles pour les messages d'alerte */
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.alert-success {
+    background-color: #d4edda; /* Fond vert clair pour les succès */
+    color: #155724; /* Texte vert foncé */
+}
+
+.alert-error {
+    background-color: #f8d7da; /* Fond rouge clair pour les erreurs */
+    color: #721c24; /* Texte rouge foncé */
+}

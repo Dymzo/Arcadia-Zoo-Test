@@ -1,0 +1,1865 @@
+/* Style général pour le body */
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f4; /* Couleur de fond douce et naturelle */
+}
+
+html, body {
+    overflow-x: hidden; /* Désactive le défilement horizontal */
+    width: 100%; /* Assure que l'ensemble de la page occupe bien la largeur de l'écran */
+    
+}
+
+
+/* Styles pour l'en-tête et les sections */
+header {
+    background-image: url('Image ECF/Feuilles fougère.jpg');
+    background-size: cover; /* Pour que l'image couvre tout l'en-tête */
+    background-position: center; /* Centre l'image */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    height: 80px; /* Définir une hauteur fixe pour l'en-tête */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header img {
+    height: 130px;
+}
+
+nav {
+    display: flex;
+    flex: 1; /* Occupe l'espace restant entre le logo et les bords */
+    justify-content: center; /* Centre les éléments de navigation horizontalement */
+}
+
+nav a {
+    color: white;
+    font-size: 20px; /* Ajuster la taille de la police ici */
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block; /* Affiche les liens normalement */
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style pour le logo de connexion */
+.login {
+    margin-left: auto; /* Aligne à droite dans le flex container */
+    display: flex;
+    align-items: center; /* Centre l'élément verticalement */
+    position: absolute; /* Positionne l'élément par rapport à son parent le plus proche en position relative */
+    right: 40px; /* Définit la distance par rapport au bord droit */
+    top: 20px; /* Définit la distance par rapport au haut */
+}
+
+.login a {
+    display: block; /* Assure que l'image est un bloc cliquable */
+}
+
+.login-icon {
+    width: 40px; /* Taille de l'icône de connexion */
+    height: 40px; /* Assure que la hauteur est égale à la largeur pour garder la forme ronde */
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Assure que l'image couvre le conteneur sans se déformer */
+    cursor: pointer; /* Change le curseur en pointeur au survol */
+}
+
+
+/* Icône du menu burger */
+.menu-burger {
+    display: none; /* Masqué par défaut, affiché sur les petits écrans */
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: absolute; /* Positionnement absolu pour le centrer */
+    left: 50%; /* Centrage horizontal */
+    transform: translateX(-50%); /* Ajuste le centrage */
+    z-index: 10; /* Assurez-vous qu'il est au-dessus des autres éléments */
+}
+
+/* Style de base pour le menu de navigation */
+#menu {
+    display: flex; /* Affichage horizontal pour les grands écrans */
+    justify-content: center; /* Centre les éléments horizontalement */
+    margin: 0;
+    padding: 0;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+/* Changer le fond des liens actifs */
+#menu a.active {
+    color: yellow; /* Couleur du lien actif */
+    background-color: rgba(0, 0, 0, 0.3); /* Optionnel : ajoute un fond léger pour mettre en évidence le lien actif */
+}
+
+
+
+
+
+/* Style pour le lien actif */
+nav a.active {
+    color: yellow; /* Couleur du lien actif */
+    background-color: rgba(0, 0, 0, 0.3); /* Optionnel : ajoute un fond léger pour mettre en évidence le lien actif */
+}
+
+/* Style pour les liens au survol */
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+
+/* Styles pour la fenêtre modale */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Fixe à l'écran */
+    top: 10px; /* Espacement depuis le haut */
+    right: 10px; /* Espacement depuis la droite */
+    width: 300px; /* Largeur de la modale (ajustez selon vos besoins) */
+    background-color: rgba(0, 0, 0, 0.8); /* Arrière-plan sombre avec opacité */
+    color: #fff; /* Texte en blanc */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    z-index: 1000; /* Au-dessus des autres éléments */
+}
+
+/* Styles pour le contenu de la modale */
+.modal-content {
+    background-color: #fff; /* Arrière-plan blanc */
+    color: #000; /* Texte en noir */
+    padding: 15px; /* Ajusté pour réduire l'espace intérieur global */
+    border-radius: 5px;
+    position: relative; /* Position relative pour le bouton de fermeture */
+}
+
+/* Styles pour le bouton de fermeture */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Styles pour les éléments du formulaire dans la modale */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Réduit l'espace sous les labels */
+.modal-content label {
+    margin-bottom: 2px; /* Réduit l'espace sous les labels */
+}
+
+/* Réduit l'espace sous la liste déroulante */
+.modal-content select {
+    margin-bottom: 4px; /* Réduit l'espace sous la liste déroulante */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Réduit l'espace sous les champs du formulaire */
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    margin-bottom: 4px; /* Réduit l'espace sous les champs du formulaire */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Réduit l'espace au-dessus du bouton de soumission */
+.modal-content input[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; /* Réduit l'espace au-dessus du bouton de soumission */
+}
+
+.modal-content input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Styles pour le titre dans la modale */
+.modal-content h2 {
+    font-size: 25px; /* Taille de la police pour le titre */
+    margin-top: 0; /* Supprimez la marge supérieure */
+    margin-bottom: 10px; /* Réduit l'espace sous le titre */
+}
+
+.login a {
+    background-color: #dc3545; /* Couleur rouge pour le bouton de déconnexion */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.login a:hover {
+    background-color: #c82333;
+}
+
+.admin-dashboard-button {
+    margin-left: 10px;
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.admin-dashboard-button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+
+
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+
+
+
+
+
+/* Conteneur principal du diaporama Accueil */
+.slideshow-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Conteneur des diapositives avec effet de défilement */
+.slides-wrapper {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Transition fluide */
+    width: 100%; /* Assurez-vous que le wrapper prend toute la largeur disponible */
+
+}
+
+/* Style pour chaque diapositive */
+.slides {
+    min-width: 100vw; /* Chaque diapositive prend toute la largeur de l'écran */
+    height: 100vh;
+    flex-shrink: 0; /* Assurez-vous que chaque diapositive conserve sa taille */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la taille totale */
+    position: relative; /* Nécessaire pour positionner les images correctement */
+
+
+}
+
+/* Images dans les diapositives */
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+
+}
+
+/* Flèches de navigation */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Points indicateurs */
+.dots-container {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Diaporama habitats */
+.slideshow-container2 {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    height: 400px;
+    background-color: #000;
+}
+
+/* Conteneur des diapositives avec effet de défilement */
+.slides-wrapper2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ajustez si vous avez plus ou moins de diapositives */
+    height: 100%;
+}
+
+/* Style pour chaque diapositive */
+.slides2 {
+    flex: 0 0 100%; /* Assure que chaque diapositive prend 100% de la largeur */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Inclut les bordures et les marges dans les dimensions */
+    position: relative;
+
+}
+
+/* Images dans les diapositives */
+.slides2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Enlève les marges inutiles */
+
+}
+
+/* Flèches de navigation */
+.prev2, .next2 {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 10; /* Assure que les flèches sont au-dessus du contenu */
+
+}
+
+.prev2 {
+    left: 0px;
+    border-radius: 3px 0 0 3px;
+}
+
+.next2 {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Points indicateurs */
+.dots-container2 {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.dot2 {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    pointer-events: none; /* Désactive les interactions */
+
+}
+
+.dot2.active, .dot:hover {
+    background-color: #717171;
+}
+
+
+
+
+
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+
+
+
+
+
+
+
+
+
+/* Styles pour le contenu de la page */
+.centered-text {
+    text-align: center;
+    font-size: 1.2em; /* Ajuste la taille de la police */
+    font-family: 'Merienda', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Police conviviale et naturelle */
+    margin: 0 auto;
+    max-width: 800px; /* Limite la largeur du texte pour un meilleur affichage */
+    line-height: 1.6; /* Espace entre les lignes pour améliorer la lisibilité */
+    color: #2f4f4f; /* Couleur agréable et naturelle */
+}
+
+/* Assurez-vous que la police Merienda est importée */
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.left-images, .right-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Aligne les éléments au centre */
+}
+
+.round-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover; /* Assurer que l'image couvre le conteneur sans se déformer */
+    margin: 10px;
+}
+
+
+
+
+
+
+/* Nos habitats accueil */
+section {
+    padding: 30px 5px;
+    margin: 5px;
+    text-align: center; /* Centre les éléments en ligne, y compris les boutons */
+}
+
+#habitats {
+    padding-top: 80px; /* Ajustez ce padding pour qu'il soit légèrement plus grand que la hauteur de l'en-tête */
+    padding: 60px;
+    text-align: center;
+}
+
+.habitats {
+    display: flex;
+    flex-direction: row; /* Alignement horizontal */
+    justify-content: space-between; /* Espace entre les éléments */
+    gap: 20px; /* Espace entre les colonnes */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+}
+
+.habitat-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centre le contenu verticalement */
+    height: 100%; /* Assure que le contenu prend toute la hauteur disponible du lien */
+    padding: 10px; /* Ajoute du padding autour du contenu */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur et la hauteur du conteneur */
+    text-align: center; /* Centre le texte à l'intérieur du conteneur */
+    transition: transform 0.3s ease; /* Effet de transition pour le zoom */
+    width: calc(33.333% - 20px); /* Permet de s'ajuster pour trois éléments par ligne */
+}
+
+.edit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+/* Effet de zoom pour les éléments individuels dans Habitats et Services */
+.habitats .habitat-content, .services div {
+    transition: transform 0.3s ease; /* Transition douce pour l'effet de zoom */
+    transform: scale(1); /* Assurez-vous que l'échelle initiale est 1 */
+}
+
+.habitats .habitat-content:hover, .services div:hover {
+    transform: scale(1.1); /* Applique le zoom uniquement lors du survol */
+}
+
+.habitat-link {
+    text-decoration: none; /* Supprime la sous-ligne des liens */
+    color: inherit; /* Conserve la couleur du texte de l'élément parent */
+}
+
+.habitat-content img {
+    width: 100%; /* Les images occupent toute la largeur du conteneur */
+    height: auto; /* Hauteur automatique pour maintenir le ratio d'aspect */
+    max-height: 200px; /* Hauteur maximale pour les images */
+    object-fit: cover; /* Maintient le ratio d'aspect tout en couvrant le conteneur */
+    border-radius: 10px; /* Coins légèrement arrondis */
+    display: block; /* Élimine les espaces blancs sous les images */
+    margin-bottom: 10px; /* Espace sous l'image pour séparer du texte */
+}
+
+
+/* Section Image avec texte Page Nos Habitats */
+#image-header {
+    position: relative;
+    width: 100vw; /* Assure que l'image couvre 100% de la largeur de l'écran */
+    height: 300px; /* Ajuster la hauteur selon vos besoins */
+    margin-top: 100px; /* Ajoute un espace supérieur pour descendre l'image */
+    overflow: hidden; /* Empêche tout débordement */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans le calcul de la largeur */
+    background-color: #f4f7f4; /* Couleur de fond douce et naturelle */
+
+}
+
+/* Conteneur de l'image */
+.image-container {
+    position: absolute; /* Positionné par rapport au parent (#image-header) */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Empêche le débordement */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans le calcul de la largeur */
+}
+
+/* Image */
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centre horizontalement */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Couvre l'espace sans déformation */
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #4CAF50;
+    font-size: 48px;
+    font-family: 'Merienda', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ajoute un effet d'ombre au texte */
+    text-align: center;
+    margin: 0; /* Supprime les marges */
+    padding: 0; /* Supprime les padding */
+}
+
+
+/* Style pour le texte d'introduction sous l'image */
+#intro-text {
+    margin-top: -100px; /* Ajustez cette valeur pour réduire l'espace au-dessus du texte */
+    padding: 0px; /* Ajoutez du padding si nécessaire */
+    background-color: #f4f7f4; /* Assurez-vous que la couleur de fond est cohérente avec le reste du design */
+}
+
+#intro-text p {
+    font-size: 18px; /* Ajustez la taille de la police si nécessaire */
+    line-height: 1.6; /* Ajuste l'espacement des lignes pour la lisibilité */
+    text-align: center; /* Centre le texte si souhaité */
+    margin: 0; /* Retire les marges par défaut */
+    padding: 0; /* Retire le padding par défaut */
+}
+
+/* Section des habitats */
+#habitats {
+    margin-top: 0px; /* Assure que la section ne se chevauche pas avec l'en-tête */
+    padding: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;  
+}
+
+
+
+/* Styles pour les sections */
+section {
+    padding: 50px;
+    background-color: #ffffff;
+    margin-bottom: 130px; /* Augmente l'espace entre les sections */
+}
+
+
+
+.narrow-paragraph {
+    text-align: center;
+    font-family: 'Merienda', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Police conviviale et naturelle */
+    max-width: 80%; /* Ajustez la largeur maximale selon vos besoins */
+    margin: 20px auto 0; /* Centrer le paragraphe horizontalement */
+    line-height: 1.6; /* Optionnel : améliore la lisibilité */
+}
+
+
+/* Styles pour le menu déroulant */
+.dropdown {
+    text-align: center; /* Centrer le bouton sous le paragraphe */
+    position: relative;
+    margin-top: 20px; /* Marge au-dessus du menu déroulant */
+    padding: 8px 16px; /* Réduit le padding pour diminuer la taille du bouton */
+    
+
+}
+
+.dropdown-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px; /* Ajuste le padding */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 100%; /* Utilise la largeur du conteneur */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centrer le menu horizontalement */
+    top: 50px; /* Ajuster pour l'alignement */
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap; /* Forcer une disposition horizontale */
+    gap: 20px; /* Espace entre chaque élément */
+}
+
+
+.dropdown-content img {
+    height: 100px; /* Ajustez la hauteur selon vos besoins */
+    margin: 0 10px; /* Marge entre les images */
+    vertical-align: middle; /* Aligne verticalement les images */
+    cursor: pointer; /* Curseur pointeur pour les images */
+    
+}
+/* Style pour les liens dans les boutons */
+.dropdown-content a {
+    color: black; /* Définit la couleur des liens à noir */
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: bold; /* Rend le texte en gras */
+}
+
+.dropdown-content a:hover {
+    color: black; /* Maintient la couleur du texte au survol */
+    text-decoration: none; /* Maintient l'absence de soulignement au survol */
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex; /* Affiche le menu déroulant au survol */
+}
+
+.dropdown:hover .dropdown-button {
+    background-color: #dfa810; /* Changement de couleur au survol du bouton */
+}
+
+/* Afficher le menu sur survol ou clic */
+.dropdown-container:hover .dropdown-content,
+.dropdown-container.active .dropdown-content {
+    display: inline-block;
+}
+.dropdown img {width: 100px; /* Ajustez selon vos besoins */
+    height: 100px; /* Ajustez selon vos besoins */
+    border-radius: 50%; /* Forme ronde */
+    object-fit: cover; /* Maintient la qualité en remplissant le conteneur */
+    image-rendering: -webkit-optimize-contrast; /* Améliore la netteté sur Webkit (Chrome, Safari) */
+    image-rendering: -moz-crisp-edges; /* Améliore la netteté sur Firefox */
+    image-rendering: crisp-edges; /* Améliore la netteté pour les navigateurs modernes */
+    filter: brightness(1.1) contrast(1.2); /* Ajuste la luminosité et le contraste */
+    display: block; /* Évite les espaces blancs autour de l'image */
+    margin: 0 auto; /* Centre l'image dans son conteneur */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+.hidden {
+    display: none;
+}
+.toggle-details-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.toggle-details-button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+/* Nos services accueil */
+#services {
+    
+    padding: 40px 20px; /* Valeur par défaut pour le padding */
+    text-align: center;
+    margin-top: 130px;
+}
+
+.services {
+    display: flex;
+    flex-direction: row; /* Alignement horizontal */
+    justify-content: space-between; /* Espace entre les éléments */
+    gap: 20px; /* Espace entre les colonnes */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+}
+
+.services > div {
+    flex: 1 1 calc(33.333% - 20px); /* Permet aux éléments de s'ajuster à la largeur du conteneur */
+    max-width: calc(33.333% - 20px); /* Limite la largeur pour aligner horizontalement */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur et la hauteur du conteneur */
+    text-align: center; /* Centre le texte à l'intérieur du conteneur */
+    margin-bottom: 20px; /* Espace sous les éléments pour les séparer les uns des autres */
+
+}
+
+
+.services img {
+    width: 100%; /* Les images occupent toute la largeur du conteneur */
+    height: auto; /* Hauteur automatique pour maintenir le ratio d'aspect */
+    max-height: 200px; /* Hauteur maximale pour les images */
+    object-fit: cover; /* Maintient le ratio d'aspect tout en couvrant le conteneur */
+    border-radius: 10px; /* Coins légèrement arrondis */
+    display: block; /* Élimine les espaces blancs sous les images */
+    margin-bottom: 10px; /* Espace sous l'image pour séparer du texte */
+}
+
+.service-link {
+    text-decoration: none; /* Supprime la sous-ligne des liens */
+    color: inherit; /* Conserve la couleur du texte de l'élément parent */
+}
+
+
+
+.zoom {
+    transition: transform 0.3s ease;
+}
+
+.zoom:hover {
+    transform: scale(1.1); /* Ajustez le facteur de zoom selon vos besoins */
+}
+
+
+
+/* Style général pour les éléments de service */ 
+.service-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Désactiver l'effet de zoom si la section est ouverte */
+.service-item.open:hover {
+    transform: none; /* Pas d'effet de zoom */
+}
+
+/* Effet de zoom quand on survole une section fermée */
+.service-item:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Désactiver l'effet de zoom si la section est ouverte */
+.service-item.open:hover {
+    transform: none;
+}
+
+/* Styles pour les descriptions */
+.description {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    padding: 0 10px; /* Ajoute un peu d'espace intérieur */
+}
+
+/* Description visible lorsque la section est ouverte */
+.service-item.open .description {
+    max-height: 400px; /* Augmente cette valeur si nécessaire pour s'assurer que le texte est entièrement visible */
+    opacity: 1;
+    padding: 10px; /* Ajoute du padding pour un meilleur rendu */
+}
+
+.show-more {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-more:hover {
+    background-color: #45a049;
+}
+
+/* Styles pour le conteneur d'images */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne si nécessaire */
+    gap: 15px; /* Espacement entre les images */
+    max-height: 0; /* Hauteur initiale cachée */
+    overflow: hidden; /* Cache le débordement */
+    opacity: 0; /* Cache les images */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Transition douce */
+    padding: 10px; /* Espacement intérieur */
+    justify-content: center; /* Centrer les images dans la galerie */
+
+}
+
+/* Styles pour les images dans la galerie */
+.image-gallery img {
+    flex: 1 1 calc(50% - 15px); /* Chaque image prend 50% de la largeur moins l'espacement */
+    max-width: calc(50% - 15px); /* Largeur maximale pour chaque image */
+    height: auto; /* Hauteur automatique pour maintenir le ratio d'aspect */
+    border-radius: 8px; /* Coins arrondis pour les images */
+    object-fit: cover; /* Assure que les images remplissent le conteneur sans déformation */
+    width: 100%; /* Permet aux images d'être responsives */
+
+}
+
+/* Galerie visible lorsque la section est ouverte */
+.service-item.open .image-gallery {
+    max-height: 400px; /* Ajustez la hauteur maximale si nécessaire */
+    opacity: 1;
+}
+
+/* Styles pour la ligne des horaires */
+.service-hours {
+    display: none; /* Cachée par défaut */
+    text-align: center; /* Centre le texte */
+    margin-top: 15px; /* Espacement au-dessus */
+    padding: 10px; /* Espacement intérieur */
+    background-color: #f4f4f4; /* Couleur de fond légère pour le bloc */
+    border: 1px solid #ddd; /* Bordure légère autour du bloc */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+}
+
+/* Horaires visibles lorsque la section est ouverte */
+.service-item.open .service-hours {
+    display: block;
+}
+
+
+
+
+
+/* Assurez-vous que la police Merienda est importée */
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+/* Appliquer la police Merienda aux titres <h2> */
+h2 {
+    font-family: 'Merienda', cursive; /* Utiliser la police Merienda */
+    font-size: 60px;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+h3 {
+    font-size: 25px;
+    margin: 10px 0; /* Marge au-dessus et en dessous des titres */
+}
+
+
+/* ========= Section Animaux ========= */
+
+/* Style général pour la section des animaux */
+#animaux {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+
+/* Grille des images des animaux */
+.animals-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 colonnes de largeur égale */
+    gap: 20px; /* Espacement entre les éléments de la grille */
+    row-gap: 30px; /* Espacement spécifique entre les lignes */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style pour chaque élément de la grille */
+.animal-item {
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Ajout d'un léger espace entre l'image et le texte */
+.animal-item p {
+    margin-top: 3px !important; /* Ajoute un espace entre l'image et le texte */
+    font-size: 20px !important; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Assurez-vous que le texte soit bien centré */
+}
+
+/* Style des images rondes avec amélioration de la qualité */
+.animal-item img {
+    width: 100px; /* Ajustez selon vos besoins */
+    height: 100px; /* Ajustez selon vos besoins */
+    border-radius: 50%; /* Forme ronde */
+    object-fit: cover; /* Maintient la qualité en remplissant le conteneur */
+    image-rendering: -webkit-optimize-contrast; /* Améliore la netteté sur Webkit (Chrome, Safari) */
+    image-rendering: -moz-crisp-edges; /* Améliore la netteté sur Firefox */
+    image-rendering: crisp-edges; /* Améliore la netteté pour les navigateurs modernes */
+    filter: brightness(1.1) contrast(1.2); /* Ajuste la luminosité et le contraste */
+    display: block; /* Évite les espaces blancs autour de l'image */
+    margin: 0 auto; /* Centre l'image dans son conteneur */
+    transition: transform 0.3s ease-in-out;
+}
+
+.animal-title {
+    margin-top: 10px; /* Espace entre l'image et le titre */
+    font-size: 14px; /* Taille du texte pour les titres */
+    color: #333; /* Couleur du texte (ajustez selon vos besoins) */
+    font-family: 'Arial', sans-serif; /* Police pour les titres */
+    text-align: center;
+}
+
+.animal-item a {
+    text-decoration: none; /* Retire le soulignement */
+    color: inherit; /* Utilise la couleur du texte par défaut (héritée) */
+}
+
+.animal-item:hover img {
+    transform: scale(1.1); /* Zoom sur l'image */
+}
+
+.animal-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre */
+}
+
+.animal-item a:hover {
+    text-decoration: none; /* Assurez-vous que le soulignement ne réapparaisse pas au survol */
+}
+
+
+/* Styles pour la section Avis des Visiteurs */
+#avis-visiteurs {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f9f9f9; /* Fond léger pour la section */
+}
+
+#avis-visiteurs h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.stars {
+    display: flex;
+    justify-content: center; /* Pour centrer les étoiles */
+    margin-bottom: 10px; /* Optionnel : ajustez l'espacement entre les étoiles et le texte */
+}
+
+.star {
+    font-size: 20px; /* Vous pouvez ajuster la taille des étoiles */
+    color: #FFD700; /* Couleur des étoiles dorées */
+    margin-right: 5px; /* Espacement entre les étoiles */
+}
+
+.avis-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.avis-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.avis-grid {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.avis-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    flex: 0 0 auto;
+    margin: 10px;
+}
+
+.avis-item p {
+    font-size: 16px;
+    font-style: italic;
+    color: #555;
+}
+
+.avis-item span {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+
+
+/* Styles pour la fenêtre modale */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Fixe à l'écran */
+    top: 10px; /* Espacement depuis le haut */
+    right: 10px; /* Espacement depuis la droite */
+    width: 300px; /* Largeur de la modale (ajustez selon vos besoins) */
+    background-color: rgba(0, 0, 0, 0.8); /* Arrière-plan sombre avec opacité */
+    color: #fff; /* Texte en blanc */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    z-index: 1000; /* Au-dessus des autres éléments */
+}
+
+/* Styles pour le contenu de la modale */
+.modal-content {
+    background-color: #fff; /* Arrière-plan blanc */
+    color: #000; /* Texte en noir */
+    padding: 15px; /* Ajusté pour réduire l'espace intérieur global */
+    border-radius: 5px;
+    position: relative; /* Position relative pour le bouton de fermeture */
+}
+
+/* Styles pour le bouton de fermeture */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Styles pour les éléments du formulaire dans la modale */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Réduit l'espace sous les labels */
+.modal-content label {
+    margin-bottom: 2px; /* Réduit l'espace sous les labels */
+}
+
+/* Réduit l'espace sous la liste déroulante */
+.modal-content select {
+    margin-bottom: 4px; /* Réduit l'espace sous la liste déroulante */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Réduit l'espace sous les champs du formulaire */
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    margin-bottom: 4px; /* Réduit l'espace sous les champs du formulaire */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Réduit l'espace au-dessus du bouton de soumission */
+.modal-content input[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; /* Réduit l'espace au-dessus du bouton de soumission */
+}
+
+.modal-content input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Styles pour le titre dans la modale */
+.modal-content h2 {
+    font-size: 25px; /* Taille de la police pour le titre */
+    margin-top: 0; /* Supprimez la marge supérieure */
+    margin-bottom: 10px; /* Réduit l'espace sous le titre */
+}
+
+#leave-review {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  #leave-review h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  #leave-review input, 
+  #leave-review textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #leave-review button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #leave-review button:hover {
+    background-color: #45a049;
+  }
+  
+
+
+
+/* Astérisque rouge pour les champs obligatoires */
+.required {
+    color: red;
+  }
+  
+  /* Astérisque rouge pour les champs obligatoires */
+.required {
+    color: red;
+  }
+  
+ /* Style des étoiles */
+.star-rating {
+    display: flex;
+    direction: rtl; /* De droite à gauche */
+    justify-content: center; /* Centrer les étoiles horizontalement */
+    align-items: center; /* Centrer les étoiles verticalement (si nécessaire) */
+  }
+  
+  .star-rating input {
+    display: none; /* Masquer les boutons radio */
+  }
+  
+  .star-rating label {
+    font-size: 40px; /* Augmenter la taille des étoiles */
+    color: #ccc; /* Couleur grise pour les étoiles non sélectionnées */
+    cursor: pointer;
+    margin: 0 2px; /* Ajouter un petit espace entre les étoiles */
+  }
+  
+  /* Colorer les étoiles sélectionnées et celles à droite */
+  .star-rating input:checked ~ label {
+    color: #FFD700; /* Jaune pour les étoiles sélectionnées */
+  }
+  
+  .star-rating input:checked + label,
+  .star-rating input:checked + label ~ label {
+    color: #FFD700; /* Jaune pour les étoiles sélectionnées et toutes celles à droite */
+  }
+  
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color: #FFD700; /* Survoler met toutes les étoiles jaunes */
+  }
+
+
+
+
+/* Style pour le titre sous chaque image */
+.animal-item p {
+    margin: 0;
+    font-size: 1em;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style pour la section contact */
+main {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contact-container {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-container label {
+    font-size: 14px;
+    color: #333;
+}
+
+.contact-container input[type="email"],
+.contact-container input[type="text"],
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.contact-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-container input[type="submit"] {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles pour les informations horaires et l'adresse */
+.footer-info {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    padding: 20px; /* Ajoute un espace autour du contenu */
+    gap: 50px; /* Espace entre les sections */
+  }
+  
+  .zoo-hours, .contact-info {
+    margin-bottom: 10px; /* Ajoute un espace entre les éléments */
+  }
+  
+  .zoo-hours h3 {
+    margin-bottom: 10px; /* Ajoute un espace sous le titre des horaires */
+  }
+  
+  /* Séparation et alignement */
+  .zoo-hours, .contact-info {
+    flex: 1; /* Prend tout l'espace disponible */
+    text-align: center; /* Centre les sections */
+  }
+  
+  .footer-content {
+    padding-top: 10px; /* Ajoute un espace au-dessus de la bordure */
+  }
+
+
+
+
+
+
+ /* Styles pour la carte Google Maps */
+ .map-container {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 200px; /* Hauteur réduite pour la carte */
+    max-width: 400px; /* Largeur maximale de la carte */
+    border: none;
+  }
+  
+
+
+
+
+  /* Styles pour le footer */
+footer {
+    text-align: center; /* Centre le texte et le contenu */
+    padding: 20px; /* Ajoute un espace autour du contenu */
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    width: 100%; /* Assure que le footer occupe toute la largeur de l'écran */
+   
+}
+
+footer p {
+    margin: 0; /* Retire les marges par défaut */
+    font-size: 14px; /* Taille du texte */
+}
+
+footer a {
+    color: #fff; /* Couleur des liens en blanc */
+    text-decoration: none; /* Retire le soulignement des liens */
+    margin: 0 10px; /* Espace entre les liens */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Ajoute un soulignement au survol */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ /* Propriétés spécifiques pour les écrans haute résolution */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .animal-item img {
+        image-rendering: -webkit-optimize-contrast; /* Pour Webkit */
+        image-rendering: -moz-crisp-edges; /* Pour Firefox */
+        image-rendering: crisp-edges; /* Pour les autres navigateurs modernes */
+    }
+}
+ 
+
+
+
+
+/* Petits écrans */
+@media (max-width: 768px) {
+    .menu-burger {
+        display: block; /* Afficher le menu burger */
+    }
+
+    #menu {
+        display: none; /* Masquer le menu de navigation par défaut */
+        position: absolute;
+        top: 80px; /* Ajustez selon la hauteur de l'en-tête */
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9); /* Fond sombre pour le menu */
+        flex-direction: column;
+        align-items: center; /* Centre les éléments horizontalement */
+        text-align: center;
+        z-index: 1000; /* Assurez-vous qu'il est au-dessus du contenu */
+        max-height: 400px; /* Hauteur maximale du menu */
+
+    }
+
+    #menu.active, #menu.show {
+        display: flex; /* Afficher le menu lorsque l'icône est cliquée */
+    }
+
+    #menu a {
+        padding: 15px; /* Ajuster le padding pour une meilleure visibilité */
+        font-size: 18px; /* Ajuste la taille de la police pour les petits écrans */
+        display: block; /* Assure que chaque lien est un bloc séparé */
+        width: 100%; /* S'assure que les liens prennent toute la largeur disponible */
+    }
+
+    nav {
+        display: none; /* Masquer le menu de navigation par défaut */
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px); /* Hauteur du menu pour remplir l'écran */
+        justify-content: center; /* Centre les éléments verticalement */
+        text-align: center;
+    }
+
+    nav.active {
+        display: flex; /* Afficher le menu lorsque l'icône est cliquée */
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-images, .right-images {
+        flex-direction: row;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .round-image {
+        width: 120px; /* Réduire légèrement la taille des images pour mobile */
+        height: 120px;
+    }
+
+    .center-paragraph {
+        margin: 20px 0;
+    }
+
+    /* Assure que les sections sont alignées verticalement pour petits écrans */
+    #habitats, #services {
+        flex-direction: column; /* Alignement vertical pour petits écrans */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .services {
+        flex-direction: column; /* Passer en disposition verticale */
+        gap: 30px; /* Espacement entre les sections */
+    }
+    
+    .services > div {
+        flex: 1 1 100%; /* Chaque élément prend 100% de la largeur */
+        max-width: 100%; /* Limite la largeur à 100% */
+    }
+
+    .image-gallery img {
+        flex: 1 1 100%; /* Les images prennent 100% de la largeur */
+        max-width: 150px; /* Largeur maximale pour chaque image */
+    }
+
+    header img {
+        height: 80px;
+    }
+
+    .footer-info {
+        flex-direction: column; /* Dispose les sections en colonne sur les petits écrans */
+        text-align: center; /* Centre le texte sur les petits écrans */
+    }
+    .image-gallery img {
+        flex: 1 1 calc(100% - 15px); /* Chaque image prend 100% de la largeur moins l'espacement pour petits écrans */
+        max-width: calc(100% - 15px); /* Largeur maximale pour chaque image */
+    }
+}
+
+
+
+
+
+
+/* Pour les smartphones */
+@media (max-width: 480px) {
+    .menu-burger {
+        display: block; /* Affiche le menu burger */
+    }
+
+    #menu {
+        display: none; /* Masque le menu de navigation par défaut */
+        position: absolute;
+        top: 60px; /* Ajusté pour tenir compte des petits en-têtes */
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.95); /* Fond plus sombre pour plus de lisibilité */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        z-index: 1000;
+        max-height: 350px; /* Hauteur maximale ajustée pour smartphones */
+    }
+
+    #menu.active, #menu.show {
+        display: flex; /* Affiche le menu lorsque l'icône est cliquée */
+    }
+
+    #menu a {
+        padding: 12px; /* Réduction du padding pour économiser de l'espace */
+        font-size: 16px; /* Taille de police plus petite */
+        display: block;
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px); /* Hauteur réduite du menu */
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav.active {
+        display: flex; /* Affiche le menu */
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Conteneur principal */
+    #presentation .container {
+        display: flex;
+        flex-direction: column; /* Les éléments se placent en colonne */
+        align-items: center;
+        padding: 10px; /* Réduction des marges internes */
+    }
+
+    /* Images à gauche et à droite, affichées en colonne */
+    .left-images, .right-images {
+        flex-direction: row; /* Garde les images en ligne sur petits écrans */
+        justify-content: space-around;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .round-image {
+        width: 80px; /* Taille des images plus petite pour smartphones */
+        height: 80px;
+        object-fit: cover;
+        margin: 5px; /* Espacement entre les images */
+    }
+
+    /* Texte centré */
+    .centered-text {
+        text-align: center; /* Centre le texte */
+        margin: 20px 0; /* Espace autour du texte */
+    }
+
+    /* Titre de la présentation */
+    .centered-text h2 {
+        font-size: 2.5rem; /* Taille de police ajustée pour le titre */
+        margin-bottom: 10px;
+    }
+
+    /* Paragraphe de présentation */
+    .centered-text p {
+        font-size: 0.9rem; /* Taille de police légèrement réduite */
+        line-height: 1.4; /* Espacement entre les lignes pour plus de lisibilité */
+        padding: 0 15px; /* Ajout de marges internes pour plus d'aération */
+    }
+
+    .center-paragraph {
+        margin: 15px 0;
+        font-size: 0.9rem; /* Taille de police légèrement réduite */
+    }
+
+    /* Alignement vertical pour les sections sur smartphones */
+    #habitats, #services {
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .services {
+        flex-direction: column;
+        gap: 20px; /* Espacement entre les sections réduit */
+    }
+
+    .services > div {
+        flex: 1 1 100%; /* Chaque élément prend toute la largeur */
+        max-width: 100%;
+    }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px; /* Espace réduit entre les images */
+        justify-content: center;
+    }
+
+    .image-gallery img {
+        width: 100px; /* Réduction de la taille des images pour tenir sur smartphones */
+        max-width: 100px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    header img {
+        height: 60px; /* Hauteur réduite de l'image dans l'en-tête */
+    }
+
+    .footer-info {
+        flex-direction: column; /* Dispose les sections en colonne sur les petits écrans */
+        text-align: center;
+    }
+}
+
+/* Réglages pour la grille des animaux sur smartphones */
+@media (max-width: 480px) {
+    .animals-grid {
+        grid-template-columns: 2fr; /* Une seule colonne sur les smartphones */
+    }
+
+    .service-item .description {
+        font-size: 0.8rem; /* Réduction de la taille de police pour économiser de l'espace */
+        margin-bottom: 10px;
+    }
+
+    .service-item {
+        padding: 0 10px; /* Réduction du padding pour mieux s'adapter aux petits écrans */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Réglages pour les grilles */
+@media (max-width: 1200px) {
+    .animals-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur les écrans moyens */
+    }
+}
+
+@media (max-width: 900px) {
+    .animals-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 600px) {
+    .animals-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur les petits écrans */
+    }
+}
+
+@media (max-width: 400px) {
+    .animals-grid {
+        grid-template-columns: 2fr; /* 2 colonne sur les très petits écrans */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modifications section habitats*/
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
